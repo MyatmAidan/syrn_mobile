@@ -1,0 +1,368 @@
+.syrn-detail-header {
+  --background: var(--syrn-oat-milk);
+  background-color: var(--syrn-oat-milk);
+}
+
+.syrn-detail-toolbar {
+  --background: transparent;
+  --border-style: none;
+  background-color: transparent;
+  padding: 8px 16px 0 16px;
+}
+
+.syrn-favourite-button {
+  background: none;
+  border: none;
+  color: var(--syrn-graphite);
+  font-size: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  padding: 8px;
+  outline: none;
+}
+
+.syrn-favourite-button ion-icon.active {
+  color: var(--syrn-love-potion);
+}
+
+.syrn-detail-content {
+  --background: var(--syrn-oat-milk);
+}
+
+.syrn-detail-spinner-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.syrn-detail-error {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  padding: 32px;
+  font-family: 'Inter', sans-serif;
+  color: rgba(93, 105, 115, 0.7);
+  gap: 16px;
+}
+
+.syrn-detail-container {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--syrn-oat-milk);
+  padding-bottom: 40px;
+}
+
+.syrn-detail-hero {
+  width: 100%;
+  height: 300px;
+  background-color: rgba(240, 194, 131, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.syrn-detail-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.syrn-detail-image-placeholder {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, var(--syrn-ballerina) 0%, var(--syrn-pollen) 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.syrn-detail-info-card {
+  background-color: rgba(255, 255, 255, 0.85);
+  border-top-left-radius: 32px;
+  border-top-right-radius: 32px;
+  margin-top: -24px;
+  position: relative;
+  z-index: 10;
+  padding: 32px 24px 24px 24px;
+  border-bottom: 1px solid rgba(220, 167, 161, 0.2);
+}
+
+.syrn-detail-brand {
+  font-family: 'Inter', sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  color: rgba(93, 105, 115, 0.5);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 8px;
+  display: inline-block;
+}
+
+.syrn-detail-name {
+  font-family: 'Inter', sans-serif;
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--syrn-graphite);
+  line-height: 1.3;
+  margin: 0 0 12px 0;
+}
+
+.syrn-detail-stock {
+  font-size: 0.85rem;
+  color: var(--ion-color-medium, #666);
+  margin: 4px 0 12px;
+}
+
+.syrn-add-cart-btn {
+  width: 100%;
+  margin-bottom: 16px;
+}
+
+.syrn-detail-price {
+  font-family: 'Inter', sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--syrn-love-potion);
+  display: block;
+  margin-bottom: 20px;
+}
+
+.syrn-detail-tags {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 24px;
+  flex-wrap: wrap;
+}
+
+.syrn-detail-tag {
+  font-family: 'Inter', sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  padding: 6px 12px;
+  border-radius: 12px;
+}
+
+.skin-type-tag {
+  background-color: rgba(240, 194, 131, 0.2);
+  color: #c98e3b;
+}
+
+.concern-tag {
+  background-color: rgba(220, 167, 161, 0.2);
+  color: var(--syrn-love-potion);
+}
+
+.syrn-detail-section {
+  margin-top: 24px;
+}
+
+.syrn-detail-section-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--syrn-graphite);
+  margin: 0 0 12px 0;
+}
+
+.syrn-detail-description {
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  line-height: 1.6;
+  color: rgba(93, 105, 115, 0.85);
+  margin: 0;
+}
+
+.syrn-detail-ingredients-box {
+  background-color: rgba(93, 105, 115, 0.04);
+  border-radius: 16px;
+  padding: 16px;
+  border: 1px solid rgba(93, 105, 115, 0.08);
+}
+
+.syrn-detail-ingredients {
+  font-family: 'Inter', sans-serif;
+  font-size: 13px;
+  line-height: 1.5;
+  color: rgba(93, 105, 115, 0.75);
+  margin: 0;
+}
+
+/* Reviews Section Styles */
+.syrn-reviews-section {
+  padding: 24px;
+  background-color: transparent;
+}
+
+.syrn-reviews-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.syrn-add-review-trigger-btn {
+  background: none;
+  border: 1px solid var(--syrn-love-potion);
+  color: var(--syrn-love-potion);
+  border-radius: 20px;
+  padding: 6px 14px;
+  font-family: 'Inter', sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  outline: none;
+  transition: all 0.2s ease;
+}
+
+.syrn-add-review-trigger-btn:active {
+  background-color: var(--syrn-love-potion);
+  color: var(--syrn-white);
+}
+
+.syrn-reviews-empty {
+  text-align: center;
+  padding: 32px 16px;
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  color: rgba(93, 105, 115, 0.5);
+  background-color: rgba(255, 255, 255, 0.5);
+  border-radius: 16px;
+}
+
+.syrn-reviews-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.syrn-review-item {
+  background-color: rgba(255, 255, 255, 0.7);
+  border-radius: 16px;
+  padding: 16px;
+  border: 1px solid rgba(220, 167, 161, 0.1);
+  display: flex;
+  flex-direction: column;
+}
+
+.syrn-review-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.syrn-review-user {
+  font-family: 'Inter', sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--syrn-graphite);
+}
+
+.syrn-review-stars {
+  display: flex;
+  gap: 2px;
+}
+
+.syrn-star-icon {
+  color: var(--syrn-pollen);
+  font-size: 14px;
+}
+
+.syrn-review-comment {
+  font-family: 'Inter', sans-serif;
+  font-size: 13px;
+  line-height: 1.5;
+  color: rgba(93, 105, 115, 0.85);
+  margin: 0 0 8px 0;
+}
+
+.syrn-review-date {
+  font-family: 'Inter', sans-serif;
+  font-size: 11px;
+  color: rgba(93, 105, 115, 0.4);
+  align-self: flex-end;
+}
+
+/* Modal form fields */
+.syrn-modal-container {
+  padding: 32px 24px;
+  background-color: var(--syrn-oat-milk);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.syrn-modal-title {
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--syrn-graphite);
+  margin: 0 0 24px 0;
+  text-align: center;
+}
+
+.syrn-modal-form {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.syrn-modal-stars-selector {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.syrn-modal-stars {
+  display: flex;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.syrn-star-btn {
+  background: none;
+  border: none;
+  padding: 4px;
+  cursor: pointer;
+  outline: none;
+}
+
+.syrn-star-select-icon {
+  font-size: 32px;
+  color: var(--syrn-pollen);
+}
+
+.syrn-textarea-field {
+  background-color: rgba(255, 255, 255, 0.95);
+  border: 1px solid rgba(220, 167, 161, 0.4);
+  border-radius: 16px;
+  padding: 16px;
+  font-family: 'Inter', sans-serif;
+  font-size: 15px;
+  color: var(--syrn-graphite);
+  outline: none;
+  resize: none;
+  margin-top: 4px;
+}
+
+.syrn-textarea-field:focus {
+  border-color: var(--syrn-love-potion);
+}
+
+.syrn-modal-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 16px;
+  margin-top: auto;
+}
+
+.syrn-modal-submit-btn {
+  width: auto;
+  min-width: 120px;
+}

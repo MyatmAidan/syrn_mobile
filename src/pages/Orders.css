@@ -1,0 +1,48 @@
+.syrn-orders-content {
+  padding: 16px;
+}
+
+.syrn-orders-empty {
+  text-align: center;
+  padding: 48px 24px;
+  color: var(--ion-color-medium);
+}
+
+.syrn-orders-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.syrn-order-card {
+  width: 100%;
+  text-align: left;
+  background: var(--ion-card-background, #fff);
+  border: none;
+  border-radius: 12px;
+  padding: 16px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+.syrn-order-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 6px;
+  font-weight: 600;
+}
+
+.syrn-order-status {
+  font-size: 0.75rem;
+  font-weight: 500;
+  padding: 2px 8px;
+  border-radius: 999px;
+  background: rgba(0, 0, 0, 0.06);
+}
+
+.syrn-order-pay-hint {
+  display: block;
+  margin-top: 8px;
+  font-size: 0.8rem;
+  color: var(--ion-color-primary, #6d28d9);
+}

@@ -1,0 +1,37 @@
+.syrn-edit-profile-content {
+  --background: var(--syrn-oat-milk, #f8f4f0);
+  padding: 16px 24px 32px;
+}
+
+.syrn-edit-profile-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.syrn-edit-profile-label {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--syrn-graphite, #5d6973);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.syrn-edit-profile-input {
+  width: 100%;
+  padding: 12px 14px;
+  border: 1px solid rgba(93, 105, 115, 0.2);
+  border-radius: 12px;
+  font-size: 1rem;
+  background: rgba(255, 255, 255, 0.9);
+  color: var(--syrn-graphite, #333);
+}
+
+.syrn-edit-profile-textarea {
+  resize: vertical;
+  min-height: 88px;
+  font-family: inherit;
+}

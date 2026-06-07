@@ -1,0 +1,342 @@
+.syrn-routines-header {
+  --background: var(--syrn-oat-milk);
+  background-color: var(--syrn-oat-milk);
+}
+
+.syrn-routines-toolbar {
+  --background: transparent;
+  --border-style: none;
+  background-color: transparent;
+  padding: 8px 16px 0 16px;
+}
+
+.syrn-routines-title {
+  --color: var(--syrn-graphite);
+  font-size: 24px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-align: center;
+  color: var(--syrn-graphite);
+  text-transform: uppercase;
+}
+
+.syrn-add-routine-btn {
+  background: none;
+  border: none;
+  color: var(--syrn-graphite);
+  font-size: 26px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  padding: 8px;
+  outline: none;
+}
+
+.syrn-add-routine-btn:active {
+  opacity: 0.6;
+}
+
+.syrn-routines-content {
+  --background: var(--syrn-oat-milk);
+}
+
+.syrn-routines-spinner-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.syrn-routines-container {
+  padding: 16px 16px 40px 16px;
+  background-color: var(--syrn-oat-milk);
+}
+
+.syrn-routines-empty {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 60px 32px;
+  text-align: center;
+  font-family: 'Inter', sans-serif;
+  color: rgba(93, 105, 115, 0.6);
+  background-color: rgba(255, 255, 255, 0.6);
+  border-radius: 20px;
+  gap: 16px;
+  border: 1px solid rgba(220, 167, 161, 0.2);
+}
+
+.syrn-empty-icon {
+  font-size: 64px;
+  color: var(--syrn-ballerina);
+}
+
+.syrn-routines-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.syrn-routine-card {
+  background-color: rgba(255, 255, 255, 0.85);
+  border-radius: 20px;
+  border: 1px solid rgba(220, 167, 161, 0.25);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 4px 12px rgba(93, 105, 115, 0.03);
+}
+
+.syrn-routine-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid rgba(220, 167, 161, 0.2);
+  padding-bottom: 12px;
+  margin-bottom: 16px;
+}
+
+.syrn-routine-title-info {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.syrn-time-icon {
+  font-size: 24px;
+  color: var(--syrn-love-potion);
+}
+
+.syrn-routine-name {
+  font-family: 'Inter', sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--syrn-graphite);
+  margin: 0 0 2px 0;
+}
+
+.syrn-routine-time-tag {
+  font-family: 'Inter', sans-serif;
+  font-size: 10px;
+  font-weight: 600;
+  color: var(--syrn-love-potion);
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+.syrn-routine-delete-btn {
+  background: none;
+  border: none;
+  color: rgba(93, 105, 115, 0.4);
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  padding: 6px;
+  outline: none;
+  border-radius: 50%;
+  transition: all 0.2s ease;
+}
+
+.syrn-routine-delete-btn:active {
+  background-color: rgba(207, 110, 108, 0.1);
+  color: var(--syrn-love-potion);
+}
+
+.syrn-routine-steps {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.syrn-no-steps-text {
+  font-family: 'Inter', sans-serif;
+  font-size: 13px;
+  color: rgba(93, 105, 115, 0.5);
+  margin: 0;
+}
+
+.syrn-routine-step-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.syrn-step-badge {
+  background-color: var(--syrn-love-potion);
+  color: var(--syrn-white);
+  font-family: 'Inter', sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.syrn-step-details {
+  display: flex;
+  flex-direction: column;
+}
+
+.syrn-step-brand {
+  font-family: 'Inter', sans-serif;
+  font-size: 10px;
+  font-weight: 600;
+  color: rgba(93, 105, 115, 0.5);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 2px;
+}
+
+.syrn-step-product-name {
+  font-family: 'Inter', sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--syrn-graphite);
+  margin: 0 0 4px 0;
+}
+
+.syrn-step-instruction {
+  font-family: 'Inter', sans-serif;
+  font-size: 12px;
+  line-height: 1.4;
+  color: rgba(93, 105, 115, 0.75);
+  margin: 0;
+  background-color: rgba(93, 105, 115, 0.03);
+  padding: 6px 10px;
+  border-radius: 8px;
+  border-left: 2px solid var(--syrn-ballerina);
+}
+
+/* Modal specific styles */
+.routines-modal-container {
+  overflow-y: auto;
+}
+
+.syrn-segment-selector {
+  background-color: rgba(93, 105, 115, 0.08);
+  border-radius: 12px;
+  padding: 2px;
+  margin-top: 4px;
+}
+
+.syrn-segment-btn {
+  --background-checked: var(--syrn-graphite);
+  --color-checked: var(--syrn-oat-milk);
+  font-family: 'Inter', sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  border-radius: 10px;
+}
+
+.products-selector-container {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.syrn-modal-products-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  max-height: 300px;
+  overflow-y: auto;
+  border: 1px solid rgba(220, 167, 161, 0.3);
+  background-color: rgba(255, 255, 255, 0.5);
+  border-radius: 16px;
+  padding: 12px;
+  margin-top: 4px;
+}
+
+.syrn-modal-product-select-card {
+  border: 1px solid rgba(93, 105, 115, 0.1);
+  background-color: var(--syrn-white);
+  border-radius: 12px;
+  padding: 10px 12px;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.2s ease;
+}
+
+.syrn-modal-product-select-card.selected {
+  border-color: var(--syrn-love-potion);
+  background-color: rgba(207, 110, 108, 0.03);
+}
+
+.syrn-product-select-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+}
+
+.syrn-select-checkmark-box {
+  width: 20px;
+  height: 20px;
+  border: 1px solid rgba(93, 105, 115, 0.2);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--syrn-white);
+}
+
+.syrn-modal-product-select-card.selected .syrn-select-checkmark-box {
+  border-color: var(--syrn-love-potion);
+  background-color: var(--syrn-love-potion);
+}
+
+.syrn-select-check {
+  color: var(--syrn-white);
+  font-size: 14px;
+}
+
+.syrn-select-product-info {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+
+.syrn-select-brand {
+  font-family: 'Inter', sans-serif;
+  font-size: 9px;
+  font-weight: 600;
+  color: rgba(93, 105, 115, 0.5);
+  text-transform: uppercase;
+}
+
+.syrn-select-name {
+  font-family: 'Inter', sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--syrn-graphite);
+}
+
+.syrn-product-instruction-input-container {
+  margin-top: 8px;
+  padding-left: 30px;
+}
+
+.syrn-product-instruction-input {
+  width: 100%;
+  border: none;
+  border-bottom: 1px solid rgba(220, 167, 161, 0.4);
+  font-family: 'Inter', sans-serif;
+  font-size: 12px;
+  color: var(--syrn-graphite);
+  padding: 4px 0;
+  outline: none;
+  background: transparent;
+}
+
+.syrn-product-instruction-input:focus {
+  border-bottom-color: var(--syrn-love-potion);
+}

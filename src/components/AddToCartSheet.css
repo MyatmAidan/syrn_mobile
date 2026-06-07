@@ -1,0 +1,150 @@
+.syrn-cart-sheet-modal {
+  --width: min(100%, 400px);
+  --height: 100%;
+  --border-radius: 20px 0 0 20px;
+  align-items: flex-end;
+  justify-content: flex-end;
+}
+
+.syrn-cart-sheet-modal::part(backdrop) {
+  background: rgba(61, 43, 43, 0.35);
+}
+
+.syrn-cart-sheet-modal::part(content) {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: min(100vw, 400px);
+  max-width: 100%;
+  border-radius: 20px 0 0 20px;
+  box-shadow: -8px 0 32px rgba(61, 43, 43, 0.15);
+}
+
+.syrn-cart-sheet-header ion-toolbar {
+  --background: var(--syrn-oat-milk, #fffaf7);
+}
+
+.syrn-cart-sheet-content {
+  --background: var(--syrn-oat-milk, #fffaf7);
+}
+
+.syrn-cart-sheet-body {
+  padding: 8px 20px 32px;
+}
+
+.syrn-cart-sheet-product {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 28px;
+}
+
+.syrn-cart-sheet-image {
+  width: 96px;
+  height: 96px;
+  border-radius: 14px;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.syrn-cart-sheet-image-placeholder {
+  width: 96px;
+  height: 96px;
+  border-radius: 14px;
+  background: rgba(220, 167, 161, 0.25);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  color: var(--syrn-love-potion, #b87a9a);
+  flex-shrink: 0;
+}
+
+.syrn-cart-sheet-brand {
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: rgba(61, 43, 43, 0.55);
+  margin: 0 0 4px;
+}
+
+.syrn-cart-sheet-name {
+  font-size: 18px;
+  font-weight: 600;
+  margin: 0 0 6px;
+  color: var(--syrn-espresso, #3d2b2b);
+  line-height: 1.3;
+}
+
+.syrn-cart-sheet-price {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--syrn-love-potion, #9d5f7a);
+  margin: 0 0 4px;
+}
+
+.syrn-cart-sheet-stock {
+  font-size: 13px;
+  color: rgba(61, 43, 43, 0.6);
+  margin: 0;
+}
+
+.syrn-cart-sheet-qty {
+  margin-bottom: 20px;
+}
+
+.syrn-cart-sheet-qty-label {
+  display: block;
+  font-size: 13px;
+  font-weight: 600;
+  margin-bottom: 10px;
+  color: var(--syrn-espresso, #3d2b2b);
+}
+
+.syrn-cart-sheet-qty-controls {
+  display: inline-flex;
+  align-items: center;
+  gap: 16px;
+  background: #fff;
+  border-radius: 14px;
+  padding: 8px 16px;
+  border: 1px solid rgba(220, 167, 161, 0.35);
+}
+
+.syrn-qty-btn {
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  border: none;
+  background: rgba(220, 167, 161, 0.2);
+  color: var(--syrn-espresso, #3d2b2b);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.syrn-qty-btn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.syrn-qty-value {
+  font-size: 18px;
+  font-weight: 600;
+  min-width: 28px;
+  text-align: center;
+}
+
+.syrn-cart-sheet-line-total {
+  font-size: 15px;
+  margin-bottom: 20px;
+  color: rgba(61, 43, 43, 0.8);
+}
+
+.syrn-cart-sheet-submit {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

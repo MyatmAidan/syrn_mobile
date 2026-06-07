@@ -1,0 +1,87 @@
+.syrn-home-header {
+  --background: var(--syrn-oat-milk);
+  background-color: var(--syrn-oat-milk);
+}
+
+.syrn-home-toolbar {
+  --background: transparent;
+  --border-style: none;
+  background-color: transparent;
+  padding: 8px 16px 0 16px;
+}
+
+.syrn-home-title {
+  --color: var(--syrn-graphite);
+  font-size: 24px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-align: center;
+  color: var(--syrn-graphite);
+}
+
+.syrn-logout-button {
+  background: none;
+  border: none;
+  color: var(--syrn-graphite);
+  font-size: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  padding: 8px;
+  outline: none;
+}
+
+.syrn-logout-button:active {
+  opacity: 0.6;
+}
+
+.syrn-home-content {
+  --background: var(--syrn-oat-milk);
+}
+
+.syrn-home-spinner-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  background-color: var(--syrn-oat-milk);
+}
+
+.syrn-home-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  padding: 32px;
+  background-color: var(--syrn-oat-milk);
+  text-align: center;
+}
+
+.syrn-success-icon-wrapper {
+  margin-bottom: 24px;
+}
+
+.syrn-success-icon {
+  font-size: 80px;
+  color: var(--syrn-love-potion);
+}
+
+.syrn-welcome-title {
+  font-size: 32px;
+  font-weight: 600;
+  color: var(--syrn-graphite);
+  margin: 0 0 12px 0;
+}
+
+.syrn-role-subtitle {
+  font-family: 'Inter', sans-serif;
+  font-size: 15px;
+  color: rgba(93, 105, 115, 0.7);
+  margin: 0 0 32px 0;
+}
+
+.syrn-explore-button {
+  max-width: 260px;
+}

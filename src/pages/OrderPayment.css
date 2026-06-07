@@ -1,0 +1,36 @@
+.syrn-payment-content {
+  padding: 16px 20px;
+}
+
+.syrn-payment-total {
+  font-size: 1.15rem;
+  margin-bottom: 20px;
+}
+
+.syrn-payment-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.syrn-bank-details {
+  background: var(--ion-card-background, #f4f4f8);
+  border-radius: 12px;
+  padding: 16px;
+  text-align: center;
+}
+
+.syrn-qr-image {
+  max-width: 220px;
+  margin-top: 12px;
+  border-radius: 8px;
+}
+
+.syrn-file-input {
+  margin: 8px 0;
+}
+
+.syrn-payment-form .syrn-btn-primary {
+  margin-top: 16px;
+  width: 100%;
+}

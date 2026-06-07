@@ -1,0 +1,151 @@
+.syrn-profile-header {
+  --background: var(--syrn-oat-milk);
+  background-color: var(--syrn-oat-milk);
+}
+
+.syrn-profile-toolbar {
+  --background: transparent;
+  --border-style: none;
+  background-color: transparent;
+  padding: 8px 16px 0 16px;
+}
+
+.syrn-profile-title {
+  --color: var(--syrn-graphite);
+  font-size: 24px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-align: center;
+  color: var(--syrn-graphite);
+  text-transform: uppercase;
+}
+
+.syrn-profile-content {
+  --background: var(--syrn-oat-milk);
+}
+
+.syrn-profile-spinner-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.syrn-profile-container {
+  padding: 16px 24px 40px 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: var(--syrn-oat-milk);
+}
+
+.syrn-profile-card {
+  background-color: rgba(255, 255, 255, 0.85);
+  border-radius: 24px;
+  border: 1px solid rgba(220, 167, 161, 0.2);
+  padding: 32px 24px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin-bottom: 24px;
+  box-shadow: 0 4px 12px rgba(93, 105, 115, 0.03);
+}
+
+.syrn-profile-avatar-container {
+  margin-bottom: 16px;
+}
+
+.syrn-profile-avatar {
+  background: linear-gradient(135deg, var(--syrn-love-potion) 0%, var(--syrn-ballerina) 100%);
+  color: var(--syrn-white);
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 36px;
+  box-shadow: 0 4px 12px rgba(207, 110, 108, 0.2);
+}
+
+.syrn-profile-name {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--syrn-graphite);
+  margin: 0 0 6px 0;
+}
+
+.syrn-profile-role-badge {
+  font-family: 'Inter', sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  color: var(--syrn-love-potion);
+  text-transform: uppercase;
+  background-color: rgba(207, 110, 108, 0.1);
+  padding: 4px 12px;
+  border-radius: 12px;
+}
+
+.syrn-profile-details {
+  background-color: rgba(255, 255, 255, 0.85);
+  border-radius: 20px;
+  border: 1px solid rgba(220, 167, 161, 0.2);
+  padding: 8px 16px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 32px;
+  box-shadow: 0 4px 12px rgba(93, 105, 115, 0.03);
+}
+
+.syrn-profile-detail-item {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 16px 8px;
+  border-bottom: 1px solid rgba(93, 105, 115, 0.08);
+}
+
+.syrn-profile-detail-item:last-child {
+  border-bottom: none;
+}
+
+.syrn-detail-item-icon {
+  font-size: 22px;
+  color: var(--syrn-love-potion);
+  flex-shrink: 0;
+}
+
+.syrn-detail-item-text {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+
+.syrn-detail-item-label {
+  font-family: 'Inter', sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  color: rgba(93, 105, 115, 0.45);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 2px;
+}
+
+.syrn-detail-item-value {
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--syrn-graphite);
+}
+
+.syrn-logout-action-btn {
+  gap: 8px;
+}
+
+.syrn-logout-btn-icon {
+  font-size: 18px;
+}

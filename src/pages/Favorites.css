@@ -1,0 +1,168 @@
+.syrn-favs-header {
+  --background: var(--syrn-oat-milk);
+  background-color: var(--syrn-oat-milk);
+}
+
+.syrn-favs-toolbar {
+  --background: transparent;
+  --border-style: none;
+  background-color: transparent;
+  padding: 8px 16px 0 16px;
+}
+
+.syrn-favs-title {
+  --color: var(--syrn-graphite);
+  font-size: 24px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-align: center;
+  color: var(--syrn-graphite);
+  text-transform: uppercase;
+}
+
+.syrn-favs-content {
+  --background: var(--syrn-oat-milk);
+}
+
+.syrn-favs-spinner-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.syrn-favs-container {
+  padding: 16px 16px 40px 16px;
+  background-color: var(--syrn-oat-milk);
+}
+
+.syrn-favs-empty {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 60px 32px;
+  text-align: center;
+  font-family: 'Inter', sans-serif;
+  color: rgba(93, 105, 115, 0.6);
+  background-color: rgba(255, 255, 255, 0.6);
+  border-radius: 20px;
+  gap: 16px;
+  border: 1px solid rgba(220, 167, 161, 0.2);
+  width: 100%;
+}
+
+.syrn-empty-fav-icon {
+  font-size: 64px;
+  color: var(--syrn-ballerina);
+}
+
+.syrn-favs-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.syrn-fav-card {
+  background-color: rgba(255, 255, 255, 0.85);
+  border-radius: 16px;
+  border: 1px solid rgba(220, 167, 161, 0.2);
+  padding: 12px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  cursor: pointer;
+  position: relative;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.syrn-fav-card:active {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 10px rgba(93, 105, 115, 0.05);
+}
+
+.syrn-fav-card-image-container {
+  width: 70px;
+  height: 70px;
+  border-radius: 12px;
+  overflow: hidden;
+  background-color: rgba(240, 194, 131, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.syrn-fav-card-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.syrn-fav-card-placeholder {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, var(--syrn-ballerina) 0%, var(--syrn-pollen) 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.syrn-fav-card-info {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  padding-right: 24px;
+  text-align: left;
+}
+
+.syrn-fav-card-brand {
+  font-family: 'Inter', sans-serif;
+  font-size: 10px;
+  font-weight: 600;
+  color: rgba(93, 105, 115, 0.5);
+  text-transform: uppercase;
+  margin-bottom: 2px;
+}
+
+.syrn-fav-card-name {
+  font-family: 'Inter', sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--syrn-graphite);
+  margin: 0 0 4px 0;
+  line-height: 1.4;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 180px;
+}
+
+.syrn-fav-card-price {
+  font-family: 'Inter', sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--syrn-love-potion);
+}
+
+.syrn-fav-card-remove-btn {
+  position: absolute;
+  right: 16px;
+  background: none;
+  border: none;
+  color: rgba(93, 105, 115, 0.4);
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  padding: 8px;
+  outline: none;
+  border-radius: 50%;
+  transition: all 0.2s ease;
+}
+
+.syrn-fav-card-remove-btn:active {
+  background-color: rgba(207, 110, 108, 0.1);
+  color: var(--syrn-love-potion);
+}

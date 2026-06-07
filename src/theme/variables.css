@@ -1,0 +1,203 @@
+/* For information on how to create your own theme, please refer to:
+http://ionicframework.com/docs/theming/ */
+
+:root {
+  /* Syrn Palette Colors */
+  --syrn-oat-milk: #F8E3C4;
+  --syrn-pollen: #F0C283;
+  --syrn-graphite: #5D6973;
+  --syrn-love-potion: #CF6E6C;
+  --syrn-ballerina: #DCA7A1;
+  
+  --syrn-success: #86B3A0;
+  --syrn-error: #CF6E6C;
+  --syrn-white: #FFFFFF;
+  --syrn-black: #1E262C;
+
+  /* Ionic Overrides */
+  --ion-font-family: 'Inter', sans-serif;
+
+  --ion-color-primary: var(--syrn-love-potion);
+  --ion-color-primary-rgb: 207, 110, 108;
+  --ion-color-primary-contrast: var(--syrn-white);
+  --ion-color-primary-contrast-rgb: 255, 255, 255;
+  --ion-color-primary-shade: #b6615f;
+  --ion-color-primary-tint: #d47d7b;
+
+  --ion-background-color: var(--syrn-oat-milk);
+  --ion-background-color-rgb: 248, 227, 196;
+  --ion-text-color: var(--syrn-graphite);
+  --ion-text-color-rgb: 93, 105, 115;
+}
+
+/* Custom styling helper classes */
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: var(--syrn-oat-milk);
+  color: var(--syrn-graphite);
+}
+
+.syrn-brand-font {
+  font-family: 'Playfair Display', Georgia, serif;
+}
+
+/* Custom styles for Syrn Input Fields */
+.syrn-input-container {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+  width: 100%;
+}
+
+.syrn-input-label {
+  font-size: 13px;
+  font-weight: 500;
+  color: rgba(93, 105, 115, 0.7);
+  margin-bottom: 8px;
+  letter-spacing: 0.5px;
+  text-align: left;
+}
+
+.syrn-input-wrapper {
+  display: flex;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.95);
+  border: 1px solid rgba(220, 167, 161, 0.4);
+  border-radius: 16px;
+  padding: 8px 16px;
+  transition: all 0.2s ease-in-out;
+}
+
+.syrn-input-wrapper:focus-within {
+  border-color: var(--syrn-love-potion);
+  box-shadow: 0 0 0 1px var(--syrn-love-potion);
+}
+
+.syrn-input-icon {
+  color: var(--syrn-love-potion);
+  font-size: 20px;
+  margin-right: 12px;
+  display: flex;
+  align-items: center;
+}
+
+.syrn-input-field {
+  border: none;
+  background: transparent;
+  width: 100%;
+  color: var(--syrn-graphite);
+  font-family: 'Inter', sans-serif;
+  font-size: 15px;
+  outline: none;
+  padding: 8px 0;
+}
+
+.syrn-input-field::placeholder {
+  color: rgba(93, 105, 115, 0.45);
+}
+
+.syrn-validation-error {
+  color: var(--syrn-error);
+  font-size: 12px;
+  margin-top: 4px;
+  text-align: left;
+  padding-left: 4px;
+  font-family: 'Inter', sans-serif;
+}
+
+/* Premium Button Styling */
+.syrn-btn-primary {
+  width: 100%;
+  background-color: var(--syrn-love-potion);
+  color: var(--syrn-white);
+  border: none;
+  border-radius: 30px;
+  font-family: 'Inter', sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: 1.2px;
+  padding: 16px 32px;
+  cursor: pointer;
+  outline: none;
+  transition: background-color 0.2s ease-in-out, transform 0.1s ease-in-out;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 4px 10px rgba(207, 110, 108, 0.15);
+}
+
+.syrn-btn-primary:active {
+  transform: scale(0.98);
+  background-color: #b6615f;
+}
+
+.syrn-btn-primary:disabled {
+  background-color: rgba(207, 110, 108, 0.5);
+  cursor: not-allowed;
+  transform: none;
+}
+
+.syrn-btn-secondary {
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.9);
+  color: var(--syrn-graphite);
+  border: 1px solid rgba(207, 110, 108, 0.35);
+  border-radius: 30px;
+  font-family: 'Inter', sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: 1.2px;
+  padding: 16px 32px;
+  cursor: pointer;
+  outline: none;
+  transition: background-color 0.2s ease-in-out, transform 0.1s ease-in-out;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.syrn-btn-secondary:active {
+  transform: scale(0.98);
+  background-color: rgba(255, 255, 255, 1);
+}
+
+.syrn-btn-text {
+  background: none;
+  border: none;
+  color: var(--syrn-graphite);
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.8px;
+  cursor: pointer;
+  outline: none;
+  padding: 8px 16px;
+  text-transform: uppercase;
+}
+
+.syrn-btn-text:active {
+  opacity: 0.7;
+}
+
+/* Keyframes for Splash Screen */
+@keyframes syrn-fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes syrn-scale-up {
+  from { transform: scale(0.92); }
+  to { transform: scale(1); }
+}
+
+@keyframes syrn-slide-up {
+  from { transform: translateY(15px); }
+  to { transform: translateY(0); }
+}
+
+@keyframes syrn-progress-grow {
+  from { width: 0%; }
+  to { width: 100%; }
+}
