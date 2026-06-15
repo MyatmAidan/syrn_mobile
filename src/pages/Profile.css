@@ -1,27 +1,16 @@
 .syrn-profile-header {
-  --background: var(--syrn-oat-milk);
-  background-color: var(--syrn-oat-milk);
+  --background: transparent;
+  background: transparent;
 }
 
 .syrn-profile-toolbar {
   --background: transparent;
   --border-style: none;
-  background-color: transparent;
-  padding: 8px 16px 0 16px;
-}
-
-.syrn-profile-title {
-  --color: var(--syrn-graphite);
-  font-size: 24px;
-  font-weight: 600;
-  letter-spacing: 2px;
-  text-align: center;
-  color: var(--syrn-graphite);
-  text-transform: uppercase;
+  padding: 8px 16px 0;
 }
 
 .syrn-profile-content {
-  --background: var(--syrn-oat-milk);
+  --background: transparent;
 }
 
 .syrn-profile-spinner-container {
@@ -32,114 +21,157 @@
 }
 
 .syrn-profile-container {
-  padding: 16px 24px 40px 24px;
+  padding: 8px 20px 40px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: var(--syrn-oat-milk);
 }
 
 .syrn-profile-card {
-  background-color: rgba(255, 255, 255, 0.85);
-  border-radius: 24px;
-  border: 1px solid rgba(220, 167, 161, 0.2);
-  padding: 32px 24px;
+  background: var(--syrn-gradient-card);
+  border-radius: var(--syrn-radius-xl);
+  border: 1px solid var(--syrn-border);
+  padding: 36px 24px 28px;
   width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
-  margin-bottom: 24px;
-  box-shadow: 0 4px 12px rgba(93, 105, 115, 0.03);
+  margin-bottom: 20px;
+  box-shadow: var(--syrn-shadow-md);
+  backdrop-filter: blur(16px);
+  animation: syrn-slide-up 0.5s var(--syrn-ease-smooth) forwards;
 }
 
 .syrn-profile-avatar-container {
   margin-bottom: 16px;
+  position: relative;
+}
+
+.syrn-profile-avatar-ring {
+  position: absolute;
+  inset: -5px;
+  border-radius: 50%;
+  background: var(--syrn-gradient-primary);
+  background-size: 200% 200%;
+  animation: syrn-gradient-flow 3s ease infinite, syrn-pulse-glow 2.5s ease-in-out infinite;
 }
 
 .syrn-profile-avatar {
-  background: linear-gradient(135deg, var(--syrn-love-potion) 0%, var(--syrn-ballerina) 100%);
+  position: relative;
+  background: var(--syrn-gradient-primary);
+  background-size: 200% 200%;
+  animation: syrn-gradient-flow 4s ease infinite;
   color: var(--syrn-white);
-  width: 80px;
-  height: 80px;
+  width: 88px;
+  height: 88px;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 36px;
-  box-shadow: 0 4px 12px rgba(207, 110, 108, 0.2);
+  font-size: 40px;
+  box-shadow: var(--syrn-shadow-glow);
+  border: 3px solid var(--syrn-white);
 }
 
 .syrn-profile-name {
-  font-size: 24px;
+  font-size: 26px;
   font-weight: 700;
   color: var(--syrn-graphite);
-  margin: 0 0 6px 0;
+  margin: 0 0 8px;
 }
 
 .syrn-profile-role-badge {
-  font-family: 'Inter', sans-serif;
-  font-size: 11px;
-  font-weight: 600;
-  letter-spacing: 1px;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1.2px;
   color: var(--syrn-love-potion);
   text-transform: uppercase;
-  background-color: rgba(207, 110, 108, 0.1);
-  padding: 4px 12px;
-  border-radius: 12px;
+  background: rgba(207, 110, 108, 0.12);
+  border: 1px solid rgba(207, 110, 108, 0.2);
+  padding: 5px 14px;
+  border-radius: var(--syrn-radius-full);
 }
 
 .syrn-profile-details {
-  background-color: rgba(255, 255, 255, 0.85);
-  border-radius: 20px;
-  border: 1px solid rgba(220, 167, 161, 0.2);
-  padding: 8px 16px;
+  background: var(--syrn-surface-elevated);
+  border-radius: var(--syrn-radius-xl);
+  border: 1px solid var(--syrn-border);
+  padding: 4px 16px;
   width: 100%;
   display: flex;
   flex-direction: column;
-  margin-bottom: 32px;
-  box-shadow: 0 4px 12px rgba(93, 105, 115, 0.03);
+  margin-bottom: 24px;
+  box-shadow: var(--syrn-shadow-sm);
+  backdrop-filter: blur(16px);
+  animation: syrn-slide-up 0.5s var(--syrn-ease-smooth) 0.1s both;
 }
 
 .syrn-profile-detail-item {
   display: flex;
   align-items: center;
   gap: 16px;
-  padding: 16px 8px;
-  border-bottom: 1px solid rgba(93, 105, 115, 0.08);
+  padding: 16px 4px;
+  border-bottom: 1px solid rgba(93, 105, 115, 0.06);
+  transition: background var(--syrn-duration-fast) ease;
 }
 
 .syrn-profile-detail-item:last-child {
   border-bottom: none;
 }
 
-.syrn-detail-item-icon {
-  font-size: 22px;
-  color: var(--syrn-love-potion);
+.syrn-detail-item-icon-wrap {
+  width: 40px;
+  height: 40px;
+  border-radius: var(--syrn-radius-sm);
+  background: rgba(207, 110, 108, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
   flex-shrink: 0;
+}
+
+.syrn-detail-item-icon {
+  font-size: 20px;
+  color: var(--syrn-love-potion);
 }
 
 .syrn-detail-item-text {
   display: flex;
   flex-direction: column;
   text-align: left;
+  flex: 1;
+  min-width: 0;
 }
 
 .syrn-detail-item-label {
-  font-family: 'Inter', sans-serif;
-  font-size: 11px;
-  font-weight: 600;
-  color: rgba(93, 105, 115, 0.45);
+  font-size: 10px;
+  font-weight: 700;
+  color: var(--syrn-text-muted);
   text-transform: uppercase;
-  letter-spacing: 0.5px;
+  letter-spacing: 0.6px;
   margin-bottom: 2px;
 }
 
 .syrn-detail-item-value {
-  font-family: 'Inter', sans-serif;
   font-size: 14px;
   font-weight: 500;
   color: var(--syrn-graphite);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.syrn-profile-actions {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  animation: syrn-slide-up 0.5s var(--syrn-ease-smooth) 0.2s both;
+}
+
+.syrn-profile-edit-btn {
+  margin-bottom: 12px;
 }
 
 .syrn-logout-action-btn {

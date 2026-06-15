@@ -3,6 +3,7 @@ import { useHistory } from 'react-router-dom';
 import { IonPage, IonContent, IonIcon } from '@ionic/react';
 import { mailOutline, lockClosedOutline, warningOutline } from 'ionicons/icons';
 import SyrnBrandPainter from '../components/SyrnBrandPainter';
+import SoftSparkles from '../components/SoftSparkles';
 import { ApiService, persistAuthSession } from '../services/apiService';
 import './Login.css';
 
@@ -77,8 +78,11 @@ const Login: React.FC = () => {
 
   return (
     <IonPage>
-      <IonContent className="syrn-login-content" scrollY={true}>
+      <IonContent className="syrn-login-content syrn-page-bg" scrollY={true}>
         <div className="syrn-login-container">
+          <SoftSparkles count={8} />
+          <div className="syrn-login-orb syrn-login-orb-1" />
+          <div className="syrn-login-orb syrn-login-orb-2" />
           <form className="syrn-login-form" onSubmit={handleLogin} noValidate>
             
             {/* Elegant brand mark (simplified version) */}
@@ -86,7 +90,7 @@ const Login: React.FC = () => {
               <SyrnBrandPainter size={80} simplified={true} />
             </div>
 
-            <h1 className="syrn-login-title syrn-brand-font">syrn</h1>
+            <h1 className="syrn-login-title syrn-brand-font syrn-animate-gradient-text">syrn</h1>
             <p className="syrn-login-subtitle">SIGN IN</p>
 
             <div className="syrn-form-fields-container">

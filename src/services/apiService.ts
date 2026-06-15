@@ -28,14 +28,22 @@ export function getAssetBaseUrl(): string {
   return applyAndroidHost(baseUrl.replace(/\/api\/user\/?$/, '').replace(/\/api\/?$/, ''));
 }
 
-function resolveStorageUrl(pathOrUrl: string): string {
+export function resolveStorageUrl(pathOrUrl: string): string {
+  const assetBase = getAssetBaseUrl();
+
   if (pathOrUrl.startsWith('http://') || pathOrUrl.startsWith('https://')) {
-    if (pathOrUrl.includes('://localhost/storage/')) {
-      return pathOrUrl.replace('://localhost/storage/', `${getAssetBaseUrl()}/storage/`);
+    const storageMatch = pathOrUrl.match(/\/storage\/(.+)$/);
+    if (storageMatch) {
+      return `${assetBase}/storage/${storageMatch[1]}`;
     }
     return applyAndroidHost(pathOrUrl);
   }
-  return `${getAssetBaseUrl()}/storage/${pathOrUrl.replace(/^\//, '')}`;
+
+  const path = pathOrUrl.replace(/^\//, '');
+  if (path.startsWith('storage/')) {
+    return `${assetBase}/${path}`;
+  }
+  return `${assetBase}/storage/${path}`;
 }
 
 // In-memory token cache so the Bearer header is set reliably (axios + async Preferences)
@@ -243,9 +251,46 @@ export interface OrderItem {
   line_total: string;
 }
 
+export interface OrderReceiptItem {
+  product_name: string;
+  quantity: number;
+  unit_price: string;
+  line_total: string;
+}
+
+export interface OrderReceipt {
+  receipt_number: string;
+  order_number: string;
+  issued_at: string;
+  customer: {
+    name: string;
+    email?: string;
+    phone: string;
+  };
+  shipping: {
+    name: string;
+    phone: string;
+    address: string;
+  };
+  items: OrderReceiptItem[];
+  subtotal: string;
+  total: string;
+  customer_note: string | null;
+  payment: {
+    bank_name?: string;
+    account_name?: string;
+    account_number?: string;
+    amount: string;
+    verified_at?: string | null;
+    verified_by?: string | null;
+    admin_note?: string | null;
+  };
+}
+
 export interface Order {
   order_id: number;
   order_number: string;
+  receipt_number?: string | null;
   status: OrderStatus;
   subtotal: string;
   total: string;
@@ -253,12 +298,16 @@ export interface Order {
   shipping_phone: string;
   shipping_address: string;
   customer_note: string | null;
+  confirmed_at?: string | null;
   items?: OrderItem[];
   payment?: {
     slip_image_url: string | null;
     status: string;
+    reviewed_at?: string | null;
+    admin_note?: string | null;
     payment_bank?: PaymentBank;
   } | null;
+  receipt?: OrderReceipt | null;
   created_at: string;
 }
 

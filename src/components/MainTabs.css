@@ -1,21 +1,69 @@
+/* Floating Glass Tab Bar — Soft Girl */
 .syrn-tab-bar {
-  --background: var(--syrn-oat-milk);
-  border-top: 1px solid rgba(220, 167, 161, 0.3);
-  height: 60px;
+  --background: transparent;
+  background: rgba(255, 248, 252, 0.85) !important;
+  backdrop-filter: blur(28px) saturate(2);
+  -webkit-backdrop-filter: blur(28px) saturate(2);
+  border: 1.5px solid rgba(255, 255, 255, 0.85);
+  border-radius: 32px;
+  height: 70px;
+  padding: 4px 10px;
+  box-shadow: var(--syrn-shadow-tab);
+  margin: 0 16px calc(12px + env(safe-area-inset-bottom, 0px)) !important;
+  width: calc(100% - 32px) !important;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  overflow: visible;
+  animation: syrn-slide-up 0.6s var(--syrn-ease-spring) 0.2s both;
 }
 
 .syrn-tab-button {
   --background: transparent;
-  --color: rgba(93, 105, 115, 0.5);
-  --color-selected: var(--syrn-love-potion);
+  --background-focused: transparent;
+  --color: var(--syrn-text-muted);
+  --color-selected: var(--syrn-rose);
+  --ripple-color: rgba(244, 167, 185, 0.18);
   font-family: 'Inter', sans-serif;
-  font-weight: 500;
-  font-size: 11px;
+  font-weight: 600;
+  font-size: 10px;
+  letter-spacing: 0.3px;
+  transition: transform 0.25s var(--syrn-ease-spring);
+  position: relative;
+}
+
+.syrn-tab-button.tab-selected {
+  transform: translateY(-4px);
+}
+
+.syrn-tab-button.tab-selected::before {
+  content: '';
+  position: absolute;
+  top: 2px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 28px;
+  height: 3px;
+  border-radius: var(--syrn-radius-full);
+  background: var(--syrn-gradient-primary);
+  animation: syrn-tab-pop 0.4s var(--syrn-ease-spring);
 }
 
 .syrn-tab-button ion-icon {
-  font-size: 22px;
-  margin-bottom: 2px;
+  font-size: 24px;
+  margin-bottom: 3px;
+  transition: transform 0.3s var(--syrn-ease-spring), filter 0.3s ease;
+}
+
+.syrn-tab-button.tab-selected ion-icon {
+  animation: syrn-tab-pop 0.45s var(--syrn-ease-spring);
+  filter: drop-shadow(0 3px 8px rgba(244, 167, 185, 0.5));
+}
+
+.syrn-tab-button ion-label {
+  font-weight: 600;
+  transition: color 0.2s ease;
 }
 
 .syrn-tab-cart {
@@ -24,15 +72,21 @@
 
 .syrn-cart-badge {
   position: absolute;
-  top: 4px;
-  right: calc(50% - 28px);
+  top: 0;
+  right: calc(50% - 30px);
   min-width: 18px;
   height: 18px;
   font-size: 10px;
   font-weight: 700;
-  border-radius: 999px;
-  --background: var(--syrn-love-potion, #9d5f7a);
+  border-radius: var(--syrn-radius-full);
+  --background: var(--syrn-rose);
   --color: #fff;
   padding: 2px 5px;
   line-height: 14px;
+  box-shadow: 0 2px 10px rgba(244, 167, 185, 0.5);
+  animation: syrn-heartbeat 1.5s ease-in-out infinite;
+}
+
+ion-tabs ion-router-outlet > .ion-page > ion-content {
+  --padding-bottom: calc(90px + env(safe-area-inset-bottom, 0px));
 }

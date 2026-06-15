@@ -1,36 +1,466 @@
+.syrn-payment-header {
+  --background: transparent;
+  background: transparent;
+}
+
+.syrn-payment-toolbar {
+  --background: transparent;
+  --border-style: none;
+}
+
 .syrn-payment-content {
-  padding: 16px 20px;
+  --background: transparent;
+  padding: 8px 20px 40px;
+}
+
+.syrn-payment-not-found {
+  padding: 48px 24px;
+  text-align: center;
+  color: var(--syrn-text-muted);
+}
+
+/* Hero */
+.syrn-payment-hero {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 16px 18px;
+  margin-bottom: 24px;
+  background: var(--syrn-gradient-card);
+  border: 1px solid var(--syrn-border);
+  border-radius: var(--syrn-radius-xl);
+  box-shadow: var(--syrn-shadow-md);
+  backdrop-filter: blur(16px);
+}
+
+.syrn-payment-hero-icon {
+  width: 52px;
+  height: 52px;
+  border-radius: var(--syrn-radius-md);
+  background: var(--syrn-gradient-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 26px;
+  color: var(--syrn-white);
+  flex-shrink: 0;
+  box-shadow: var(--syrn-shadow-glow);
+}
+
+.syrn-payment-order-ref {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--syrn-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  margin: 0 0 4px;
 }
 
 .syrn-payment-total {
-  font-size: 1.15rem;
-  margin-bottom: 20px;
+  font-size: 15px;
+  color: var(--syrn-plum);
+  margin: 0;
 }
 
+.syrn-payment-total strong {
+  display: block;
+  font-size: 26px;
+  font-weight: 700;
+  margin-top: 2px;
+  background: linear-gradient(135deg, var(--syrn-rose) 0%, var(--syrn-lilac) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Form sections */
 .syrn-payment-form {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.syrn-payment-section {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.syrn-payment-section-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.syrn-payment-step {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: var(--syrn-gradient-primary);
+  color: var(--syrn-white);
+  font-size: 13px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  box-shadow: var(--syrn-shadow-glow);
+}
+
+.syrn-payment-section-title {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--syrn-plum);
+  margin: 0 0 4px;
+}
+
+.syrn-payment-section-hint {
+  display: flex;
+  align-items: flex-start;
+  gap: 5px;
+  font-size: 12px;
+  color: var(--syrn-text-muted);
+  margin: 0;
+  line-height: 1.45;
+}
+
+.syrn-payment-section-hint ion-icon {
+  font-size: 15px;
+  color: var(--syrn-rose);
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+.syrn-payment-section-hint strong {
+  color: var(--syrn-rose-deep);
+}
+
+.syrn-payment-empty-banks {
+  padding: 20px;
+  text-align: center;
+  font-size: 14px;
+  color: var(--syrn-text-muted);
+  background: var(--syrn-surface);
+  border-radius: var(--syrn-radius-lg);
+  border: 1px dashed var(--syrn-border);
+}
+
+/* Payment method cards */
+.syrn-payment-method-list {
   display: flex;
   flex-direction: column;
   gap: 10px;
 }
 
+.syrn-payment-method-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 14px 16px;
+  background: var(--syrn-surface-elevated);
+  border: 2px solid var(--syrn-border);
+  border-radius: var(--syrn-radius-lg);
+  cursor: pointer;
+  outline: none;
+  text-align: left;
+  transition: all var(--syrn-duration-fast) var(--syrn-ease-spring);
+  backdrop-filter: blur(12px);
+  box-shadow: var(--syrn-shadow-sm);
+}
+
+.syrn-payment-method-card:active {
+  transform: scale(0.98);
+}
+
+.syrn-payment-method-card.selected {
+  border-color: var(--syrn-rose);
+  background: linear-gradient(135deg, rgba(255, 240, 245, 0.95) 0%, rgba(255, 255, 255, 0.9) 100%);
+  box-shadow: var(--syrn-shadow-glow);
+}
+
+.syrn-payment-method-left {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  min-width: 0;
+}
+
+.syrn-payment-bank-avatar {
+  width: 44px;
+  height: 44px;
+  border-radius: var(--syrn-radius-sm);
+  background: var(--syrn-gradient-primary);
+  color: var(--syrn-white);
+  font-size: 14px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  letter-spacing: 0.5px;
+}
+
+.syrn-payment-method-card.selected .syrn-payment-bank-avatar {
+  animation: syrn-heartbeat 1.2s ease-in-out;
+}
+
+.syrn-payment-method-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+}
+
+.syrn-payment-bank-name {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--syrn-plum);
+}
+
+.syrn-payment-bank-account {
+  font-size: 12px;
+  color: var(--syrn-text-muted);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.syrn-payment-method-right {
+  flex-shrink: 0;
+  margin-left: 8px;
+}
+
+.syrn-payment-check-icon {
+  font-size: 26px;
+  color: var(--syrn-rose);
+  animation: syrn-scale-up 0.3s var(--syrn-ease-spring);
+}
+
+.syrn-payment-chevron {
+  font-size: 18px;
+  color: var(--syrn-text-subtle);
+}
+
+/* Bank transfer details */
 .syrn-bank-details {
-  background: var(--ion-card-background, #f4f4f8);
-  border-radius: 12px;
-  padding: 16px;
+  background: var(--syrn-gradient-card);
+  border: 1px solid var(--syrn-border);
+  border-radius: var(--syrn-radius-xl);
+  padding: 4px 0;
+  overflow: hidden;
+  box-shadow: var(--syrn-shadow-sm);
+}
+
+.syrn-bank-details-row {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 14px 18px;
+  border-bottom: 1px solid rgba(244, 167, 185, 0.12);
+}
+
+.syrn-bank-details-row:last-child {
+  border-bottom: none;
+}
+
+.syrn-bank-details-row--highlight {
+  background: rgba(244, 167, 185, 0.06);
+}
+
+.syrn-bank-details-label {
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  color: var(--syrn-text-muted);
+}
+
+.syrn-bank-details-value {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--syrn-plum);
+}
+
+.syrn-bank-account-number {
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  font-family: 'Inter', monospace;
+}
+
+.syrn-bank-account-copy {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.syrn-copy-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 6px 12px;
+  border: 1.5px solid var(--syrn-border-strong);
+  border-radius: var(--syrn-radius-full);
+  background: var(--syrn-white);
+  color: var(--syrn-rose-deep);
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform var(--syrn-duration-fast) var(--syrn-ease-spring);
+}
+
+.syrn-copy-btn:active {
+  transform: scale(0.94);
+  background: var(--syrn-rose-soft);
+}
+
+.syrn-copy-btn ion-icon {
+  font-size: 14px;
+}
+
+.syrn-qr-section {
+  padding: 18px;
   text-align: center;
+  border-top: 1px solid rgba(244, 167, 185, 0.12);
+}
+
+.syrn-qr-label {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--syrn-plum);
+  margin: 0 0 14px;
+}
+
+.syrn-qr-label ion-icon {
+  color: var(--syrn-rose);
 }
 
 .syrn-qr-image {
-  max-width: 220px;
-  margin-top: 12px;
-  border-radius: 8px;
-}
-
-.syrn-file-input {
-  margin: 8px 0;
-}
-
-.syrn-payment-form .syrn-btn-primary {
-  margin-top: 16px;
+  max-width: 200px;
   width: 100%;
+  border-radius: var(--syrn-radius-md);
+  border: 2px solid var(--syrn-border);
+  box-shadow: var(--syrn-shadow-md);
+}
+
+/* Slip upload */
+.syrn-file-input-hidden {
+  position: absolute;
+  width: 0;
+  height: 0;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.syrn-slip-upload-zone {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 32px 24px;
+  background: var(--syrn-surface);
+  border: 2px dashed var(--syrn-border-strong);
+  border-radius: var(--syrn-radius-xl);
+  cursor: pointer;
+  outline: none;
+  transition: all var(--syrn-duration-fast) var(--syrn-ease-spring);
+  gap: 6px;
+}
+
+.syrn-slip-upload-zone:active {
+  transform: scale(0.98);
+  border-color: var(--syrn-rose);
+  background: rgba(255, 240, 245, 0.8);
+  box-shadow: var(--syrn-shadow-glow);
+}
+
+.syrn-slip-upload-icon {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, rgba(244, 167, 185, 0.2) 0%, rgba(212, 184, 224, 0.2) 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 28px;
+  color: var(--syrn-rose);
+  margin-bottom: 8px;
+}
+
+.syrn-slip-upload-title {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--syrn-plum);
+}
+
+.syrn-slip-upload-sub {
+  font-size: 12px;
+  color: var(--syrn-text-muted);
+  margin-bottom: 8px;
+}
+
+.syrn-slip-upload-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 18px;
+  background: var(--syrn-gradient-primary);
+  color: var(--syrn-white);
+  border-radius: var(--syrn-radius-full);
+  font-size: 13px;
+  font-weight: 600;
+  box-shadow: var(--syrn-shadow-glow);
+}
+
+.syrn-slip-preview {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  padding: 16px;
+  background: var(--syrn-surface-elevated);
+  border: 1.5px solid var(--syrn-border);
+  border-radius: var(--syrn-radius-xl);
+}
+
+.syrn-slip-preview-image {
+  width: 100%;
+  max-height: 280px;
+  object-fit: contain;
+  border-radius: var(--syrn-radius-md);
+  border: 1px solid var(--syrn-border);
+}
+
+.syrn-slip-change-btn {
+  padding: 8px 20px;
+  border: 1.5px solid var(--syrn-border-strong);
+  border-radius: var(--syrn-radius-full);
+  background: var(--syrn-white);
+  color: var(--syrn-rose-deep);
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.syrn-payment-submit {
+  margin-top: 8px;
+}
+
+.syrn-payment-submit:disabled {
+  opacity: 0.5;
+}
+
+.syrn-detail-spinner-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50vh;
 }

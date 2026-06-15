@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import {
   IonPage,
@@ -7,7 +7,9 @@ import {
   IonToolbar,
   IonTitle,
   useIonViewWillEnter,
+  IonIcon,
 } from '@ionic/react';
+import { cartOutline } from 'ionicons/icons';
 import { ApiService, Cart as CartData, formatProductPrice } from '../services/apiService';
 import { useCart } from '../context/CartContext';
 import { useSyrnAlert } from '../context/SyrnAlertContext';
@@ -54,26 +56,31 @@ const Cart: React.FC = () => {
 
   return (
     <IonPage>
-      <IonHeader className="ion-no-border">
-        <IonToolbar>
-          <IonTitle>Cart</IonTitle>
+      <IonHeader className="syrn-cart-header ion-no-border">
+        <IonToolbar className="syrn-cart-toolbar">
+          <IonTitle className="syrn-brand-font syrn-page-title">Cart</IonTitle>
         </IonToolbar>
       </IonHeader>
-      <IonContent className="syrn-cart-content">
+      <IonContent className="syrn-cart-content syrn-page-bg">
         {isLoading ? (
           <div className="syrn-detail-spinner-container"><div className="syrn-spinner" /></div>
         ) : !cart?.items?.length ? (
           <div className="syrn-cart-empty">
-            <p>Your cart is empty.</p>
+            <IonIcon icon={cartOutline} className="syrn-cart-empty-icon" />
+            <p>Your cart is empty</p>
             <button type="button" className="syrn-btn-primary" onClick={() => history.push('/app/catalog')}>
-              Browse products
+              Browse Products
             </button>
           </div>
         ) : (
           <>
             <div className="syrn-cart-list">
-              {cart.items.map((item) => (
-                <div key={item.cart_item_id} className="syrn-cart-item">
+              {cart.items.map((item, index) => (
+                <div
+                  key={item.cart_item_id}
+                  className="syrn-cart-item"
+                  style={{ animationDelay: `${index * 60}ms` }}
+                >
                   {item.product && getProductImageUrl(item.product) && (
                     <img
                       src={getProductImageUrl(item.product) || ''}
@@ -83,19 +90,36 @@ const Cart: React.FC = () => {
                   )}
                   <div className="syrn-cart-item-info">
                     <h3>{item.product?.product_name}</h3>
-                    <p>${formatProductPrice(item.line_total)}</p>
-                  </div>
-                  <div className="syrn-cart-item-actions">
-                    <button type="button" onClick={() => updateQty(item.cart_item_id, Math.max(1, item.quantity - 1))}>−</button>
-                    <span>{item.quantity}</span>
-                    <button type="button" onClick={() => updateQty(item.cart_item_id, item.quantity + 1)}>+</button>
-                    <button type="button" className="syrn-cart-remove" onClick={() => removeItem(item.cart_item_id)}>Remove</button>
+                    <p className="syrn-cart-item-price">${formatProductPrice(item.line_total)}</p>
+                    <div className="syrn-cart-item-actions">
+                      <button
+                        type="button"
+                        className="syrn-cart-qty-btn"
+                        onClick={() => updateQty(item.cart_item_id, Math.max(1, item.quantity - 1))}
+                      >
+                        −
+                      </button>
+                      <span className="syrn-cart-qty-value">{item.quantity}</span>
+                      <button
+                        type="button"
+                        className="syrn-cart-qty-btn"
+                        onClick={() => updateQty(item.cart_item_id, item.quantity + 1)}
+                      >
+                        +
+                      </button>
+                      <button type="button" className="syrn-cart-remove" onClick={() => removeItem(item.cart_item_id)}>
+                        Remove
+                      </button>
+                    </div>
                   </div>
                 </div>
               ))}
             </div>
             <div className="syrn-cart-footer">
-              <p className="syrn-cart-total">Subtotal: <strong>${formatProductPrice(cart.subtotal)}</strong></p>
+              <p className="syrn-cart-total">
+                <span>Subtotal</span>
+                <strong>${formatProductPrice(cart.subtotal)}</strong>
+              </p>
               <button type="button" className="syrn-btn-primary syrn-cart-checkout-btn" onClick={() => history.push('/app/checkout')}>
                 Checkout
               </button>

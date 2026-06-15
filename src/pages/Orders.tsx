@@ -25,12 +25,12 @@ const Orders: React.FC = () => {
 
   return (
     <IonPage>
-      <IonHeader className="ion-no-border">
-        <IonToolbar>
-          <IonTitle>My Orders</IonTitle>
+      <IonHeader className="syrn-orders-header ion-no-border">
+        <IonToolbar className="syrn-orders-toolbar">
+          <IonTitle className="syrn-brand-font syrn-page-title">Orders</IonTitle>
         </IonToolbar>
       </IonHeader>
-      <IonContent className="syrn-orders-content">
+      <IonContent className="syrn-orders-content syrn-page-bg">
         {isLoading ? (
           <div className="syrn-detail-spinner-container"><div className="syrn-spinner" /></div>
         ) : orders.length === 0 ? (
@@ -51,6 +51,18 @@ const Orders: React.FC = () => {
                   </span>
                 </div>
                 <p>${parseFloat(order.total).toFixed(2)} · {new Date(order.created_at).toLocaleDateString()}</p>
+                {order.status === 'confirmed' && order.receipt_number && (
+                  <button
+                    type="button"
+                    className="syrn-order-receipt-badge"
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      history.push(`/app/orders/${order.order_id}/receipt`);
+                    }}
+                  >
+                    View receipt
+                  </button>
+                )}
                 <span className="syrn-order-pay-hint">View details</span>
               </button>
             ))}

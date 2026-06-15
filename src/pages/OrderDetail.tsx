@@ -10,8 +10,14 @@ import {
   IonButton,
   IonIcon,
 } from '@ionic/react';
-import { arrowBackOutline } from 'ionicons/icons';
-import { ApiService, Order, formatProductPrice } from '../services/apiService';
+import {
+  arrowBackOutline,
+  receiptOutline,
+  chevronForwardOutline,
+  checkmarkCircleOutline,
+} from 'ionicons/icons';
+import { ApiService, Order, formatProductPrice, resolveStorageUrl } from '../services/apiService';
+import '../components/OrderReceiptView.css';
 import './OrderDetail.css';
 
 const STATUS_LABELS: Record<string, string> = {
@@ -19,6 +25,14 @@ const STATUS_LABELS: Record<string, string> = {
   awaiting_verification: 'Awaiting verification',
   confirmed: 'Confirmed',
   cancelled: 'Cancelled',
+};
+
+const formatDateTime = (iso: string) => {
+  try {
+    return new Date(iso).toLocaleString();
+  } catch {
+    return iso;
+  }
 };
 
 const OrderDetail: React.FC = () => {
@@ -38,7 +52,7 @@ const OrderDetail: React.FC = () => {
   if (isLoading) {
     return (
       <IonPage>
-        <IonContent>
+        <IonContent className="syrn-page-bg">
           <div className="syrn-detail-spinner-container">
             <div className="syrn-spinner" />
           </div>
@@ -50,8 +64,8 @@ const OrderDetail: React.FC = () => {
   if (!order) {
     return (
       <IonPage>
-        <IonHeader className="ion-no-border">
-          <IonToolbar>
+        <IonHeader className="syrn-order-detail-header ion-no-border">
+          <IonToolbar className="syrn-order-detail-toolbar">
             <IonButtons slot="start">
               <IonButton onClick={() => history.goBack()}>
                 <IonIcon icon={arrowBackOutline} />
@@ -60,7 +74,7 @@ const OrderDetail: React.FC = () => {
             <IonTitle>Order</IonTitle>
           </IonToolbar>
         </IonHeader>
-        <IonContent>
+        <IonContent className="syrn-page-bg">
           <p className="syrn-order-detail-empty">Order not found.</p>
         </IonContent>
       </IonPage>
@@ -68,21 +82,26 @@ const OrderDetail: React.FC = () => {
   }
 
   const statusLabel = STATUS_LABELS[order.status] || order.status;
+  const receipt = order.receipt;
+  const slipUrl = order.payment?.slip_image_url
+    ? resolveStorageUrl(order.payment.slip_image_url)
+    : null;
 
   return (
     <IonPage>
-      <IonHeader className="ion-no-border">
-        <IonToolbar>
+      <IonHeader className="syrn-order-detail-header ion-no-border">
+        <IonToolbar className="syrn-order-detail-toolbar">
           <IonButtons slot="start">
             <IonButton onClick={() => history.goBack()}>
               <IonIcon icon={arrowBackOutline} />
             </IonButton>
           </IonButtons>
-          <IonTitle>Order {order.order_number}</IonTitle>
+          <IonTitle className="syrn-brand-font syrn-page-title">{order.order_number}</IonTitle>
         </IonToolbar>
       </IonHeader>
-      <IonContent className="syrn-order-detail-content">
-        <section className="syrn-order-detail-section">
+
+      <IonContent className="syrn-order-detail-content syrn-page-bg">
+        <section className="syrn-order-detail-section syrn-animate-in">
           <div className="syrn-order-detail-row">
             <span className="syrn-order-detail-label">Status</span>
             <span className={`syrn-order-status syrn-order-status-${order.status}`}>
@@ -91,7 +110,7 @@ const OrderDetail: React.FC = () => {
           </div>
           <div className="syrn-order-detail-row">
             <span className="syrn-order-detail-label">Placed</span>
-            <span>{new Date(order.created_at).toLocaleString()}</span>
+            <span>{formatDateTime(order.created_at)}</span>
           </div>
           <div className="syrn-order-detail-row">
             <span className="syrn-order-detail-label">Total</span>
@@ -99,7 +118,29 @@ const OrderDetail: React.FC = () => {
           </div>
         </section>
 
-        <section className="syrn-order-detail-section">
+        {receipt && (
+          <button
+            type="button"
+            className="syrn-order-receipt-preview syrn-animate-in"
+            onClick={() => history.push(`/app/orders/${order.order_id}/receipt`)}
+          >
+            <div className="syrn-order-receipt-preview-left">
+              <div className="syrn-order-receipt-preview-icon">
+                <IonIcon icon={receiptOutline} />
+              </div>
+              <div>
+                <p className="syrn-order-receipt-preview-title">View official receipt</p>
+                <p className="syrn-order-receipt-preview-sub">
+                  {receipt.receipt_number} · Verified
+                  <IonIcon icon={checkmarkCircleOutline} style={{ fontSize: 14, verticalAlign: 'middle', marginLeft: 4, color: '#5a9e7a' }} />
+                </p>
+              </div>
+            </div>
+            <IonIcon icon={chevronForwardOutline} className="syrn-order-receipt-preview-chevron" />
+          </button>
+        )}
+
+        <section className="syrn-order-detail-section syrn-animate-in">
           <h3 className="syrn-order-detail-heading">Shipping</h3>
           <p className="syrn-order-detail-text">{order.shipping_name}</p>
           <p className="syrn-order-detail-text">{order.shipping_phone}</p>
@@ -111,7 +152,7 @@ const OrderDetail: React.FC = () => {
           )}
         </section>
 
-        <section className="syrn-order-detail-section">
+        <section className="syrn-order-detail-section syrn-animate-in">
           <h3 className="syrn-order-detail-heading">Items</h3>
           {(order.items || []).map((item) => (
             <div key={item.order_item_id} className="syrn-order-detail-item">
@@ -129,22 +170,18 @@ const OrderDetail: React.FC = () => {
         </section>
 
         {order.payment && (
-          <section className="syrn-order-detail-section">
-            <h3 className="syrn-order-detail-heading">Payment</h3>
+          <section className="syrn-order-detail-section syrn-animate-in">
+            <h3 className="syrn-order-detail-heading">Payment slip</h3>
             {order.payment.payment_bank && (
               <p className="syrn-order-detail-text">
                 {order.payment.payment_bank.bank_name} · {order.payment.payment_bank.account_number}
               </p>
             )}
             <p className="syrn-order-detail-text">
-              Verification: {order.payment.status.replace(/_/g, ' ')}
+              Status: {order.payment.status.replace(/_/g, ' ')}
             </p>
-            {order.payment.slip_image_url && (
-              <img
-                src={order.payment.slip_image_url}
-                alt="Payment slip"
-                className="syrn-order-detail-slip"
-              />
+            {slipUrl && (
+              <img src={slipUrl} alt="Payment slip" className="syrn-order-detail-slip" />
             )}
           </section>
         )}

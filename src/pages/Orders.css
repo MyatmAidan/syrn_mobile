@@ -1,11 +1,29 @@
+.syrn-orders-header {
+  --background: transparent;
+  background: transparent;
+}
+
+.syrn-orders-toolbar {
+  --background: transparent;
+  --border-style: none;
+  padding: 8px 16px 0;
+}
+
 .syrn-orders-content {
-  padding: 16px;
+  --background: transparent;
+  padding: 8px 16px 40px;
 }
 
 .syrn-orders-empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   text-align: center;
-  padding: 48px 24px;
-  color: var(--ion-color-medium);
+  padding: 64px 32px;
+  min-height: 50vh;
+  color: var(--syrn-text-muted);
+  font-size: 15px;
 }
 
 .syrn-orders-list {
@@ -17,32 +35,84 @@
 .syrn-order-card {
   width: 100%;
   text-align: left;
-  background: var(--ion-card-background, #fff);
-  border: none;
-  border-radius: 12px;
-  padding: 16px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  background: var(--syrn-gradient-card);
+  border: 1px solid var(--syrn-border);
+  border-radius: var(--syrn-radius-lg);
+  padding: 18px;
+  box-shadow: var(--syrn-shadow-sm);
+  backdrop-filter: blur(12px);
+  cursor: pointer;
+  transition: transform var(--syrn-duration-fast) var(--syrn-ease-spring);
+  animation: syrn-stagger-in 0.4s var(--syrn-ease-smooth) both;
+}
+
+.syrn-order-card:active {
+  transform: scale(0.98);
 }
 
 .syrn-order-card-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 6px;
-  font-weight: 600;
+  margin-bottom: 8px;
+  font-weight: 700;
+  font-size: 14px;
+  color: var(--syrn-graphite);
 }
 
 .syrn-order-status {
-  font-size: 0.75rem;
-  font-weight: 500;
-  padding: 2px 8px;
-  border-radius: 999px;
-  background: rgba(0, 0, 0, 0.06);
+  font-size: 10px;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: var(--syrn-radius-full);
+  background: rgba(207, 110, 108, 0.12);
+  color: var(--syrn-love-potion);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.syrn-order-status-cancelled {
+  background: rgba(110, 90, 110, 0.12);
+  color: var(--syrn-text-muted);
+}
+
+.syrn-order-status-confirmed {
+  background: rgba(168, 213, 186, 0.25);
+  color: #5a9e7a;
 }
 
 .syrn-order-pay-hint {
   display: block;
   margin-top: 8px;
-  font-size: 0.8rem;
-  color: var(--ion-color-primary, #6d28d9);
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--syrn-love-potion);
+}
+
+.syrn-order-receipt-badge {
+  display: inline-block;
+  margin-top: 6px;
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  padding: 5px 12px;
+  border-radius: var(--syrn-radius-full);
+  background: rgba(168, 213, 186, 0.25);
+  color: #5a9e7a;
+  border: none;
+  cursor: pointer;
+  transition: transform var(--syrn-duration-fast) var(--syrn-ease-spring);
+}
+
+.syrn-order-receipt-badge:active {
+  transform: scale(0.94);
+  background: rgba(168, 213, 186, 0.4);
+}
+
+.syrn-detail-spinner-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50vh;
 }

@@ -3,6 +3,7 @@ import { useHistory } from 'react-router-dom';
 import { IonPage, IonContent, IonHeader, IonToolbar, IonButtons, IonIcon, IonToast } from '@ionic/react';
 import { arrowBackOutline, personOutline, mailOutline, lockClosedOutline } from 'ionicons/icons';
 import { ApiService, persistAuthSession } from '../services/apiService';
+import SoftSparkles from '../components/SoftSparkles';
 import './Signup.css';
 
 const Signup: React.FC = () => {
@@ -108,11 +109,14 @@ const Signup: React.FC = () => {
         </IonToolbar>
       </IonHeader>
 
-      <IonContent className="syrn-signup-content" scrollY={true}>
+      <IonContent className="syrn-signup-content syrn-page-bg" scrollY={true}>
         <div className="syrn-signup-container">
+          <SoftSparkles count={6} />
+          <div className="syrn-login-orb syrn-login-orb-1" />
+          <div className="syrn-login-orb syrn-login-orb-2" />
           <form className="syrn-signup-form" onSubmit={handleSignup} noValidate>
             
-            <h1 className="syrn-signup-title syrn-brand-font">syrn</h1>
+            <h1 className="syrn-signup-title syrn-brand-font syrn-animate-gradient-text">syrn</h1>
             <p className="syrn-signup-subtitle">CREATE ACCOUNT</p>
 
             <div className="syrn-form-fields-container">

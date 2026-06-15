@@ -12,6 +12,7 @@ import Cart from '../pages/Cart';
 import Checkout from '../pages/Checkout';
 import Orders from '../pages/Orders';
 import OrderDetail from '../pages/OrderDetail';
+import OrderReceipt from '../pages/OrderReceipt';
 import OrderPayment from '../pages/OrderPayment';
 import EditProfile from '../pages/EditProfile';
 import AuthGate from './AuthGate';
@@ -82,11 +83,14 @@ const MainTabs: React.FC = () => {
         <Route exact path="/app/orders">
           <Orders />
         </Route>
-        <Route exact path="/app/orders/:id">
-          <OrderDetail />
+        <Route exact path="/app/orders/:id/receipt">
+          <OrderReceipt />
         </Route>
         <Route exact path="/app/orders/:id/pay">
           <OrderPayment />
+        </Route>
+        <Route exact path="/app/orders/:id">
+          <OrderDetail />
         </Route>
         <Route exact path="/app">
           <Redirect to="/app/catalog" />
